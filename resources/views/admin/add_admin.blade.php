@@ -19,15 +19,6 @@
                 <div class="rounded h-100 p-4">
                     <form action="{{ route('admin.save') }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
-                        <div class="mb-3 col-1">
-                            <label class="form-label">ID</label>
-                            <input type="text" class="form-control" name="AdminID" value="{{ $nextID }}" readonly>
-                            <small>
-                                @error('AdminID')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </small>
-                        </div>
 
                         <div class="mb-3 col-4">
                             <label class="form-label">Username</label>

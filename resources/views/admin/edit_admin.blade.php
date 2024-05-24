@@ -32,8 +32,7 @@
                     <form action="{{ route('admin.update') }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="mb-3 col-1">
-                            <label class="form-label">ID</label>
-                            <input type="text" class="form-control" name="AdminID" value="{{ $data->AdminID }}" readonly>
+                            <input type="hidden" class="form-control" name="AdminID" value="{{ $data->AdminID }}">
                         </div>
 
                         <div class="mb-3 col-3">

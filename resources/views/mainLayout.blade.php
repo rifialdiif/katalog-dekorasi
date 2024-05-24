@@ -96,6 +96,12 @@
                                 <span class="menu-text">Dashboard</span>
                             </a>
                         </li>
+                        <li class="{{ request()->routeIs('admin') ? 'active-page-link' : '' }}">
+                            <a href="{{ route('admin') }}">
+                                <i class="bi bi-person"></i>
+                                <span class="menu-text">Admin</span>
+                            </a>
+                        </li>
                         {{-- @if (auth()->user()->role == 'admin') --}}
                         <li class="{{ request()->routeIs('kategori') ? 'active-page-link' : '' }}">
                             <a href="{{ route('kategori') }}">
@@ -107,12 +113,6 @@
                             <a href="{{ route('produk') }}">
                                 <i class="bi bi-box-seam"></i>
                                 <span class="menu-text">Produk</span>
-                            </a>
-                        </li>
-                        <li class="{{ request()->routeIs('admin') ? 'active-page-link' : '' }}">
-                            <a href="{{ route('admin') }}">
-                                <i class="bi bi-person"></i>
-                                <span class="menu-text">Admin</span>
                             </a>
                         </li>
                         {{-- @endif --}}

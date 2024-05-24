@@ -11,6 +11,7 @@ class Produk extends Model
     protected $table = 'produk';
     protected $primaryKey = 'ProdukID';
     protected $fillable = ['NamaProduk', 'Deskripsi', 'Harga', 'Gambar', 'AdminID', 'KategoriID'];
+    public $timestamps = false;
 
     public function kategori()
     {
