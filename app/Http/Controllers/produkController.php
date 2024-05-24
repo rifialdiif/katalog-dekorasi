@@ -12,8 +12,7 @@ class produkController extends Controller
         $file = $request->file('Gambar');
         // Check if a file is uploaded before processing it
         if ($file) {
-            $filePath = 'images';
-            $photo = $file->store($filePath);
+            $photo = $file->store('images', 'public');
         } else {
             // If no file is uploaded, set $photo to null
             $photo = null;
@@ -31,14 +30,14 @@ class produkController extends Controller
             'NamaProduk' => 'required|regex:/^[A-Za-z\s]+$/',
             'Deskripsi' => 'required|regex:/^[A-Za-z\s]+$/',
             'Harga' => 'required|numeric',
-            'Gambar' => 'nullable',
+            'Gambar' => 'nullable|mimes:png,jpg,jpeg,webp',
             'AdminID' => 'required',
             'KategoriID' => 'required',
         ], $message);
         $validate_data['Gambar'] =  $photo;
         Produk::create($validate_data);
 
-        return redirect("/produk");
+        return redirect("/produk")->with('message', 'Produk Baru Ditambahkan!');
     }
 
     public function updateProduk(Request $request)
@@ -47,8 +46,7 @@ class produkController extends Controller
         $photo = $request->imgPath;
         // Check if a file is uploaded before processing it
         if ($file) {
-            $filePath = 'images';
-            $photo = $file->store($filePath);
+            $photo = $file->store('images', 'public');
         }
 
         Produk::where('ProdukID', $request->ProdukID)->update([
@@ -59,7 +57,7 @@ class produkController extends Controller
             'AdminID' => $request->AdminID,
             'KategoriID' => $request->KategoriID,
         ]);
-
+        $validate_data['Gambar'] =  $photo;
         return redirect('/produk');
     }
 

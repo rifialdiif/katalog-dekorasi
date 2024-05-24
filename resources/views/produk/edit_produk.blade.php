@@ -77,8 +77,8 @@
                             <label class="form-label">Foto</label>
                             <input type="hidden" name="imgPath" value="{{ $data->Gambar }}">
                             <input class="form-control" type="file" name="Gambar" id="fotoInput">
-                            <img src="" alt="" id="previewImage"
-                                style="max-width: 100%; max-height: 200px;">
+                            <img src="{{ $data->Gambar ? asset('storage/' . $data->Gambar) : '' }}" alt=""
+                                id="previewImage" style="max-width: 100%; max-height: 200px;">
                         </div>
 
                         <div class="mb-3 col-4">
@@ -125,30 +125,21 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
-        $(document).ready(function() {
-            // Listen for the file input change event
-            $('#fotoInput').on('change', function(e) {
-                // Get the selected file
-                var file = e.target.files[0];
+        document.getElementById('fotoInput').addEventListener('change', function(event) {
+            const previewImage = document.getElementById('previewImage');
+            const file = event.target.files[0];
 
-                // Check if a file is selected
-                if (file) {
-                    // Create a FileReader object
-                    var reader = new FileReader();
+            if (file) {
+                const reader = new FileReader();
 
-                    // Set a callback function to execute when the image is loaded
-                    reader.onload = function(e) {
-                        // Set the image source with the preview data URL
-                        $('#previewImage').attr('src', e.target.result);
-                    };
-
-                    // Read the file as a Data URL (base64-encoded image)
-                    reader.readAsDataURL(file);
-                } else {
-                    // If no file is selected, clear the image source
-                    $('#previewImage').attr('src', '');
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
                 }
-            });
+
+                reader.readAsDataURL(file);
+            } else {
+                previewImage.src = ''; // Clear the preview if no file is selected
+            }
         });
     </script>
 @endsection

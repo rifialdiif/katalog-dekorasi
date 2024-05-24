@@ -63,8 +63,9 @@ class viewController extends Controller
         $maxProduk = Produk::max('ProdukID');
         $data = Produk::with('kategori')->get();
         $admin = Admin::all();
+        $kategori = Kategori::all();
         $nextID = $maxProduk + 1;
-        return view('produk.add_produk', compact('nextID', 'data', 'admin'));
+        return view('produk.add_produk', compact('nextID', 'data', 'admin', 'kategori'));
     }
 
     public function editProduk($id)

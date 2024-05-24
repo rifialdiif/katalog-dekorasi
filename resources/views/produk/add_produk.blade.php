@@ -76,8 +76,8 @@
                             <label class="form-label">Kategori</label>
                             <select class="form-select mb-3" aria-label="Default select example" name="KategoriID">
                                 <option selected disabled>--PILIH KATEGORI--</option>
-                                @foreach ($data as $key => $item)
-                                    <option value="{{ $item->kategori->KategoriID }}">{{ $item->kategori->NamaKategori }}
+                                @foreach ($kategori as $key => $item)
+                                    <option value="{{ $item->KategoriID }}">{{ $item->NamaKategori }}
                                     </option>
                                 @endforeach
                             </select>
