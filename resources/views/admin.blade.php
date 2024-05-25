@@ -23,11 +23,10 @@
             </div>
 
             <div class="table-responsive">
-                <table id="basicExampleUser" class="table custom-table">
+                <table id="basicExampleAdmin" class="table custom-table">
                     <thead>
                         <tr>
                             <th scope="col" class="text-center">#</th>
-                            <th scope="col">ID</th>
                             <th scope="col">Username</th>
                             <th scope="col">Email</th>
                             <th scope="col"></th>
@@ -37,7 +36,6 @@
                         @foreach ($admin as $key => $item)
                             <tr>
                                 <td class="text-center">{{ $key }}</td>
-                                <td>{{ $item->AdminID }}</td>
                                 <td>{{ $item->Username }}</td>
                                 <td>{{ $item->Email }}</td>
                                 <td class="text-center">

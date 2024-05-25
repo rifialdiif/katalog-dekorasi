@@ -25,8 +25,8 @@ class viewController extends Controller
     }
     public function produk()
     {
-        $produk = Produk::with('admin', 'kategori')->get();
-        return view('produk', compact('produk'));
+        $data = Produk::with('admin', 'kategori')->get();
+        return view('produk', compact('data'));
     }
 
     // Admin
@@ -41,5 +41,38 @@ class viewController extends Controller
     {
         $data = Admin::find($id);
         return view('admin.edit_admin', compact('data'));
+    }
+
+    // Kategori
+    public function addKategori()
+    {
+        $maxKategori = Kategori::max('KategoriID');
+        $nextID = $maxKategori + 1;
+        return view('kategori.add_kategori', compact('nextID'));
+    }
+
+    public function editKategori($id)
+    {
+        $data = Kategori::find($id);
+        return view('kategori.edit_kategori', compact('data'));
+    }
+
+    // Produk
+    public function addProduk()
+    {
+        $maxProduk = Produk::max('ProdukID');
+        $data = Produk::with('kategori')->get();
+        $admin = Admin::all();
+        $kategori = Kategori::all();
+        $nextID = $maxProduk + 1;
+        return view('produk.add_produk', compact('nextID', 'data', 'admin', 'kategori'));
+    }
+
+    public function editProduk($id)
+    {
+        $data = Produk::find($id);
+        $admin = Admin::all();
+        $kategori = Kategori::all();
+        return view('produk.edit_produk', compact('data', 'admin', 'kategori'));
     }
 }
