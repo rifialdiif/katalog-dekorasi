@@ -77,8 +77,8 @@
                             <label class="form-label">Foto</label>
                             <input type="hidden" name="imgPath" value="{{ $data->Gambar }}">
                             <input class="form-control" type="file" name="Gambar" id="fotoInput">
-                            <img src="{{ $data->Gambar ? asset('storage/' . $data->Gambar) : '' }}" alt=""
-                                id="previewImage" style="max-width: 100%; max-height: 200px;">
+                            <img src="{{ $data->Gambar ? asset('storage/' . $data->Gambar) : asset('theme/images/default.jpg') }}"
+                                alt="" id="previewImage" style="max-width: 100%; max-height: 200px;">
                         </div>
 
                         <div class="mb-3 col-4">

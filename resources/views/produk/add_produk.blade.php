@@ -53,7 +53,7 @@
                         <div class="mb-3 col-4">
                             <label class="form-label">Foto</label>
                             <input class="form-control" type="file" name="Gambar" id="fotoInput">
-                            <img src="" alt="" id="previewImage"
+                            <img src="{{ asset('theme/images/default.jpg') }}" alt="" id="previewImage"
                                 style="max-width: 100%; max-height: 200px;">
                         </div>
 

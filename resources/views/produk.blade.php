@@ -43,7 +43,8 @@
                                 <td>{{ $item->NamaProduk }}</td>
                                 <td>{{ $item->Deskripsi }}</td>
                                 <td>{{ $item->Harga }}</td>
-                                <td><img src="{{ 'storage/' . $item->Gambar }}" width="50px" height="50px">
+                                <td><img src="{{ $item->Gambar ? asset('storage/' . $item->Gambar) : asset('theme/images/default.jpg') }}"
+                                        width="50px" height="50px">
                                 </td>
                                 <td>{{ $item->admin->Username }}</td>
                                 <td>{{ $item->kategori->NamaKategori }}</td>
