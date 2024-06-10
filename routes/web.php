@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\kategoriController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\produkController;
 use App\Http\Controllers\viewController;
 use Illuminate\Support\Facades\Route;
@@ -49,3 +50,5 @@ Route::name('produk.')->group(function () {
     Route::post('/update-produk', [produkController::class, 'updateProduk'])->name('update');
     Route::get('/delete-produk/{id}', [produkController::class, 'deleteProduk'])->name('delete');
 });
+
+Route::get('/landingPage', [LandingPageController::class, 'landingPage'])->name('landingPage');
