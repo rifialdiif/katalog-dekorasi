@@ -52,3 +52,4 @@ Route::name('produk.')->group(function () {
 });
 
 Route::get('/landingPage', [LandingPageController::class, 'landingPage'])->name('landingPage');
+Route::get('/productKatalog', [LandingPageController::class, 'landingPage'])->name('productKatalog');

@@ -143,16 +143,22 @@ body {
 }
 
 .services-page .card-group .card .card-body {
-    background-color: var(--shades-color);
+    background-color: transparent;
 }
 
 .services-page .card-group .card .card-title {
     color: var(--accent-color);
     font-weight: var(--medium);
+    margin-bottom: -1rem;
 }
 
 .services-page .card-group .card .card-text {
     font-size: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* PRODUCTS PAGE */

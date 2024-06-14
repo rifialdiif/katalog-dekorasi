@@ -10,4 +10,9 @@ class LandingPageController extends Controller
     {
         return view('frontend.landingPage');
     }
+
+    public function productKatalog()
+    {
+        return view('frontend.productKatalog');
+    }
 }
