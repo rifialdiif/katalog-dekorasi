@@ -58,7 +58,6 @@
 <body>
 
     <div class="container-xl">
-
         {{-- PRODUCT PAGE --}}
         <div class="container text-center section product-page">
             <h1 class="heading">Our Products</h1>
@@ -140,28 +139,104 @@
                     </div>
                 </div>
             </div>
+
+            <div class="card-group">
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="row">
+                        <div class="col-8">
+                            <h5 class="card-title heading">Card title</h5>
+                            <p class="card-text body-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="col-4">
+                            <button class="katalog-button"><i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="row">
+                        <div class="col-8">
+                            <h5 class="card-title heading">Card title</h5>
+                            <p class="card-text body-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="col-4">
+                            <button class="katalog-button"><i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="row">
+                        <div class="col-8">
+                            <h5 class="card-title heading">Card title</h5>
+                            <p class="card-text body-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="col-4">
+                            <button class="katalog-button"><i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-group">
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="row">
+                        <div class="col-8">
+                            <h5 class="card-title heading">Card title</h5>
+                            <p class="card-text body-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="col-4">
+                            <button class="katalog-button"><i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="row">
+                        <div class="col-8">
+                            <h5 class="card-title heading">Card title</h5>
+                            <p class="card-text body-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="col-4">
+                            <button class="katalog-button"><i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="row">
+                        <div class="col-8">
+                            <h5 class="card-title heading">Card title</h5>
+                            <p class="card-text body-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="col-4">
+                            <button class="katalog-button"><i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         {{-- CONTACT PAGE --}}
-        <div class="container text-center section contact-page">
-            <div class="style-contact">
+        <div class="container section d-flex justify-content-center align-items-center min-vh-100">
+            <div class="style-contact text-center">
                 <h1 class="heading">Contact</h1>
                 <p class="body-text">
                     “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.”
                 </p>
-
-                <div class="social-media justify-content-center">
-                    <ul class="d-flex">
+                <div class="social-media">
+                    <ul class="d-flex justify-content-center">
                         <li><a href="#"><i class="bi bi-instagram"></i></a></li>
                         <li><a href="#"><i class="bi bi-tiktok"></i></a></li>
                         <li><a href="#"><i class="bi bi-facebook"></i></a></li>
                     </ul>
                 </div>
-
                 <button class="katalog-button">contact us</button>
-
             </div>
         </div>
+
 
         {{-- FOOTER --}}
         <footer class="text-center">

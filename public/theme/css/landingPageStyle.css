@@ -18,6 +18,8 @@
     --medium: 500;
     --semi-bold: 600;
     --bold: 700;
+
+    scroll-behavior: smooth;
 }
 
 body {
@@ -203,14 +205,16 @@ body {
 
 /* CONTACT PAGE */
 .style-contact {
-    position: relative;
     border: 5px solid var(--accent-color);
     height: 600px;
     width: 60%;
     border-radius: 50% 50% 0 0;
     padding: 8rem 5rem;
+    margin-top: 0; /* Hilangkan margin top */
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 40px;
+    align-items: center;
 }
 
 .style-contact .body-text {
@@ -224,10 +228,8 @@ footer {
 }
 
 footer .heading span {
-    position: absolute;
     color: var(--text-color);
-    font-size: 16px;
+    font-size: 14px;
     font-family: var(--exo);
-    font-weight: var(--regular);
-    margin-top: 16px;
+    font-weight: lighter;
 }

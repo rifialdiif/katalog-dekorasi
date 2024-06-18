@@ -69,16 +69,16 @@
               <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">about</a>
+                    <a class="nav-link active" aria-current="page" href="#about">about</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">services</a>
+                    <a class="nav-link" href="#services">services</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">product</a>
+                    <a class="nav-link" href="#product">product</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">contact</a>
+                    <a class="nav-link" href="#contact">contact</a>
                   </li>
                 </ul>
               </div>
@@ -86,7 +86,7 @@
         </nav>
 
         {{-- ACTIVE PAGE --}}
-        <div class="container text-center section active-page">
+        <div class="container text-center section active-page" id="home">
             <div class="row align-items-center">
               <div class="col-7 text-start">
                 <h1 class="heading">ethereal elegance weddings</h1>
@@ -108,7 +108,7 @@
         </div>
 
         {{-- ABOUT PAGE --}}
-        <div class="container text-center section about-page">
+        <div class="container text-center section about-page" id="about">
             <div class="row align-items-center">
                 <div class="col-5">
                     <img src="" alt="">
@@ -123,7 +123,7 @@
         </div>
 
         {{-- SERVICES PAGE --}}
-        <div class="container text-center section services-page">
+        <div class="container text-center section services-page" id="services">
             <h1 class="heading">our services</h1>
 
             <div class="card-group">
@@ -152,7 +152,7 @@
         </div>
 
         {{-- PRODUCT PAGE --}}
-        <div class="container text-center section product-page">
+        <div class="container text-center section product-page" id="product">
             <h1 class="heading">Our Products</h1>
 
             <div class="card-group">
@@ -164,7 +164,7 @@
                             <p class="card-text body-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                         <div class="col-4">
-                            <button class="katalog-button"><i class="bi bi-arrow-right"></i></button>
+                            <button onclick="window.location='{{ route('productKatalog')}}'" class="katalog-button"><i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                             <p class="card-text body-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                         <div class="col-4">
-                            <button class="katalog-button"><i class="bi bi-arrow-right"></i></button>
+                            <button onclick="window.location='{{ route('productKatalog')}}'" class="katalog-button"><i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -188,7 +188,7 @@
                             <p class="card-text body-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                         <div class="col-4">
-                            <button class="katalog-button"><i class="bi bi-arrow-right"></i></button>
+                            <button onclick="window.location='{{ route('productKatalog')}}'" class="katalog-button"><i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -203,7 +203,7 @@
                             <p class="card-text body-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                         <div class="col-4">
-                            <button class="katalog-button"><i class="bi bi-arrow-right"></i></button>
+                            <button onclick="window.location='{{ route('productKatalog')}}'" class="katalog-button"><i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -215,7 +215,7 @@
                             <p class="card-text body-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                         <div class="col-4">
-                            <button class="katalog-button"><i class="bi bi-arrow-right"></i></button>
+                            <button onclick="window.location='{{ route('productKatalog')}}'" class="katalog-button"><i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -227,7 +227,7 @@
                             <p class="card-text body-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                         <div class="col-4">
-                            <button class="katalog-button"><i class="bi bi-arrow-right"></i></button>
+                            <button onclick="window.location='{{ route('productKatalog')}}'" class="katalog-button"><i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -235,23 +235,20 @@
         </div>
 
         {{-- CONTACT PAGE --}}
-        <div class="container text-center section contact-page">
-            <div class="style-contact">
+        <div class="container section d-flex justify-content-center align-items-center min-vh-100" id="contact">
+            <div class="style-contact text-center">
                 <h1 class="heading">Contact</h1>
                 <p class="body-text">
                     “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.”
                 </p>
-
-                <div class="social-media justify-content-center">
-                    <ul class="d-flex">
+                <div class="social-media">
+                    <ul class="d-flex justify-content-center">
                         <li><a href="#"><i class="bi bi-instagram"></i></a></li>
                         <li><a href="#"><i class="bi bi-tiktok"></i></a></li>
                         <li><a href="#"><i class="bi bi-facebook"></i></a></li>
                     </ul>
                 </div>
-
                 <button class="katalog-button">contact us</button>
-
             </div>
         </div>
 
