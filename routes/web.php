@@ -4,6 +4,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\produkController;
 use App\Http\Controllers\viewController;
 use Illuminate\Support\Facades\Route;
@@ -62,3 +63,6 @@ Route::name('sign.')->group(function () {
     Route::post('/login', [authController::class, 'loginPost'])->name('proccess');
     Route::get('/logout', [authController::class, 'logout'])->name('out');
 });
+Route::get('/landingPage', [LandingPageController::class, 'landingPage'])->name('landingPage');
+Route::get('/productKatalog', [LandingPageController::class, 'productKatalog'])->name('productKatalog');
+
