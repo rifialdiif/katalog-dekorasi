@@ -22,11 +22,12 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('dashboard');
 // });
-
-Route::get('/', [viewController::class, 'dashboard'])->name('home');
-Route::get('/admin', [viewController::class, 'admin'])->name('admin');
-Route::get('/kategori', [viewController::class, 'kategori'])->name('kategori');
-Route::get('/produk', [viewController::class, 'produk'])->name('produk');
+Route::group(['middleware' => 'admin-access'], function () {
+    Route::get('/', [viewController::class, 'dashboard'])->name('home');
+    Route::get('/admin', [viewController::class, 'admin'])->name('admin');
+    Route::get('/kategori', [viewController::class, 'kategori'])->name('kategori');
+    Route::get('/produk', [viewController::class, 'produk'])->name('produk');
+});
 
 // Admin
 Route::name('admin.')->group(function () {
