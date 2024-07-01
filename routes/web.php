@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\authController;
 use App\Http\Controllers\kategoriController;
+use App\Http\Controllers\loginController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\produkController;
 use App\Http\Controllers\viewController;
@@ -21,12 +23,14 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('dashboard');
 // });
+Route::group(['middleware' => 'admin-access'], function () {
+    Route::get('/', [viewController::class, 'dashboard'])->name('home');
+    Route::get('/admin', [viewController::class, 'admin'])->name('admin');
+    Route::get('/kategori', [viewController::class, 'kategori'])->name('kategori');
+    Route::get('/produk', [viewController::class, 'produk'])->name('produk');
+});
 
-Route::get('/', [viewController::class, 'dashboard'])->name('home');
-Route::get('/admin', [viewController::class, 'admin'])->name('admin');
-Route::get('/kategori', [viewController::class, 'kategori'])->name('kategori');
-Route::get('/produk', [viewController::class, 'produk'])->name('produk');
-
+// Admin
 Route::name('admin.')->group(function () {
     Route::get('/add-admin', [viewController::class, 'addAdmin'])->name('add');
     Route::post('/save-admin', [adminController::class, 'saveAdmin'])->name('save');
@@ -35,6 +39,7 @@ Route::name('admin.')->group(function () {
     Route::get('/delete-admin/{id}', [adminController::class, 'deleteAdmin'])->name('delete');
 });
 
+// Kategori
 Route::name('kategori.')->group(function () {
     Route::get('/add-kategori', [viewController::class, 'addKategori'])->name('add');
     Route::post('/save-kategori', [kategoriController::class, 'saveKategori'])->name('save');
@@ -43,6 +48,7 @@ Route::name('kategori.')->group(function () {
     Route::get('/delete-kategori/{id}', [kategoriController::class, 'deleteKategori'])->name('delete');
 });
 
+// Produk
 Route::name('produk.')->group(function () {
     Route::get('/add-produk', [viewController::class, 'addProduk'])->name('add');
     Route::post('/save-produk', [produkController::class, 'saveProduk'])->name('save');
@@ -51,5 +57,12 @@ Route::name('produk.')->group(function () {
     Route::get('/delete-produk/{id}', [produkController::class, 'deleteProduk'])->name('delete');
 });
 
+//Login
+Route::name('sign.')->group(function () {
+    Route::get('/login', [viewController::class, 'login'])->name('in');
+    Route::post('/login', [authController::class, 'loginPost'])->name('proccess');
+    Route::get('/logout', [authController::class, 'logout'])->name('out');
+});
 Route::get('/landingPage', [LandingPageController::class, 'landingPage'])->name('landingPage');
 Route::get('/productKatalog', [LandingPageController::class, 'productKatalog'])->name('productKatalog');
+

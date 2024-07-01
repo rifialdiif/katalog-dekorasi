@@ -13,6 +13,10 @@ class viewController extends Controller
     {
         return view('dashboard');
     }
+    public function login()
+    {
+        return view('signIn');
+    }
     public function admin()
     {
         $admin = Admin::all();
